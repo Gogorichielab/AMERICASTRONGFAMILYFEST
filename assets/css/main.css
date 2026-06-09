@@ -608,7 +608,7 @@ nav.scrolled {
 }
 .loc-list .l-text span { color: rgba(255,255,255,0.68); font-weight: 300; }
 .directions-btn {
-  display: inline-block; margin-top: 2rem;
+  display: inline-block; margin-top: 1rem;
   background: var(--red); color: white;
   padding: 0.8rem 2rem; font-size: 0.82rem;
   letter-spacing: 0.1em; font-weight: 500; text-transform: uppercase;
