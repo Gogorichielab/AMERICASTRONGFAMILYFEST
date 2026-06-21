@@ -3,6 +3,7 @@
   --navy-deep: #060E2B;
   --red: #C0282D;
   --red-dark: #8B1218;
+  --red-deep: #9E1F23;
   --gold: #C9963A;
   --gold-light: #E8BE6A;
   --cream: #F8F2E6;
@@ -81,7 +82,7 @@ nav.scrolled {
   position: relative; min-height: 100vh;
   display: flex; flex-direction: column;
   justify-content: center; align-items: flex-start;
-  overflow: hidden; background: var(--navy-deep);
+  overflow: hidden; background: var(--navy);
   padding: 0 clamp(2rem, 10vw, 10rem);
 }
 .stars-canvas { position: absolute; inset: 0; z-index: 0; }
@@ -202,6 +203,7 @@ nav.scrolled {
 @keyframes scrollPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
 
 /* ── ABOUT ── */
+#about { background: var(--red-deep); }
 .about {
   padding: 9rem 3rem;
   max-width: 1200px; margin: 0 auto;
@@ -211,19 +213,19 @@ nav.scrolled {
 
 .about-text .section-tag {
   font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
+  color: var(--gold-light); font-weight: 500;
   margin-bottom: 2rem; display: block;
 }
 .about-text h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 600; line-height: 1.05;
-  color: var(--navy); margin-bottom: 1.8rem;
+  color: var(--cream); margin-bottom: 1.8rem;
 }
-.about-text h2 em { font-style: italic; color: var(--red); }
+.about-text h2 em { font-style: italic; color: var(--gold-light); }
 .about-text p {
   font-size: 0.97rem; line-height: 1.9;
-  color: var(--muted); font-weight: 300;
+  color: rgba(255,255,255,0.82); font-weight: 300;
   margin-bottom: 1rem;
 }
 .about-text p:last-of-type { margin-bottom: 2.2rem; }
@@ -270,7 +272,7 @@ nav.scrolled {
 
 /* ── ACTIVITIES ── */
 .activities-section {
-  background: var(--cream);
+  background: var(--red-deep);
   padding: 8rem 3rem;
   position: relative; overflow: hidden;
 }
@@ -280,7 +282,7 @@ nav.scrolled {
   transform: translateY(-50%);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 22rem; color: rgba(10,31,92,0.035);
+  font-size: 22rem; color: rgba(255,255,255,0.04);
   line-height: 1; pointer-events: none; user-select: none;
 }
 
@@ -291,16 +293,16 @@ nav.scrolled {
 }
 .act-header .section-tag {
   font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
+  color: var(--gold-light); font-weight: 500;
   display: block; margin-bottom: 0.8rem;
 }
 .act-header h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 4.5vw, 4rem);
-  font-weight: 700; color: var(--navy); line-height: 1.05;
+  font-weight: 700; color: var(--cream); line-height: 1.05;
 }
 .act-header-note {
-  font-size: 0.9rem; color: var(--muted); font-weight: 300; line-height: 1.7;
+  font-size: 0.9rem; color: rgba(255,255,255,0.82); font-weight: 300; line-height: 1.7;
   align-self: end; padding-bottom: 0.4rem;
 }
 
@@ -310,46 +312,35 @@ nav.scrolled {
 }
 .act-row {
   display: grid;
-  grid-template-columns: 7rem 14rem 1fr;
+  grid-template-columns: 14rem 1fr;
   gap: 0 3.5rem;
   padding: 3rem 0;
-  border-bottom: 1px solid rgba(10,31,92,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   align-items: start;
   transition: background 0.2s;
 }
 .act-row:last-child { border-bottom: none; }
-.act-row:hover { background: rgba(10,31,92,0.025); }
-
-.act-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic; font-size: 4.5rem;
-  color: rgba(10,31,92,0.1); line-height: 0.85;
-  transition: color 0.2s;
-}
-.act-row:hover .act-num { color: rgba(201,150,58,0.35); }
+.act-row:hover { background: rgba(255,255,255,0.05); }
 
 .act-main { padding-top: 0.3rem; }
 .act-icon { font-size: 1.6rem; display: block; margin-bottom: 0.8rem; }
 .act-main h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.7rem; font-weight: 600;
-  color: var(--navy); line-height: 1.1;
+  color: var(--cream); line-height: 1.1;
 }
 
 .act-desc {
-  font-size: 0.9rem; color: var(--muted);
+  font-size: 0.9rem; color: rgba(255,255,255,0.82);
   line-height: 1.75; font-weight: 300;
   padding-top: 0.5rem;
 }
 
 @media(max-width: 900px) {
   .act-header { grid-template-columns: 1fr; gap: 1rem; }
-  .act-row { grid-template-columns: 4rem 1fr; gap: 0 1.5rem; }
-  .act-desc { grid-column: 2; }
 }
 @media(max-width: 500px) {
   .act-row { grid-template-columns: 1fr; }
-  .act-num { font-size: 3rem; margin-bottom: 0.5rem; }
 }
 
 /* ── SPONSOR ── */
@@ -455,7 +446,7 @@ nav.scrolled {
 }
 
 /* ── VOLUNTEER ── */
-.volunteer-section { padding: 8rem 3rem; background: var(--offwhite); }
+.volunteer-section { padding: 8rem 3rem; background: var(--red-deep); }
 .vol-inner {
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: 5fr 7fr; gap: 6rem;
@@ -463,23 +454,23 @@ nav.scrolled {
 }
 .vol-text .section-tag {
   font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
+  color: var(--gold-light); font-weight: 500;
   display: block; margin-bottom: 1rem;
 }
 .vol-text h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 4vw, 4rem);
-  font-weight: 700; color: var(--navy); line-height: 1.05; margin-bottom: 1.6rem;
+  font-weight: 700; color: var(--cream); line-height: 1.05; margin-bottom: 1.6rem;
 }
-.vol-text p { color: var(--muted); line-height: 1.9; font-weight: 300; font-size: 0.92rem; margin-bottom: 1rem; }
+.vol-text p { color: rgba(255,255,255,0.82); line-height: 1.9; font-weight: 300; font-size: 0.92rem; margin-bottom: 1rem; }
 .vol-roles {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 2rem;
 }
 .vol-role-chip {
   display: flex; align-items: center; gap: 0.5rem;
-  background: rgba(10,31,92,0.05);
+  background: rgba(255,255,255,0.08);
   padding: 0.55rem 0.9rem; font-size: 0.78rem;
-  color: var(--navy); font-weight: 500;
+  color: var(--cream); font-weight: 500;
   border-left: 2px solid var(--gold);
 }
 
@@ -539,7 +530,7 @@ nav.scrolled {
 }
 
 /* ── LOCATION ── */
-.location-section { background: var(--cream); padding: 8rem 3rem; }
+.location-section { background: var(--red-deep); padding: 8rem 3rem; }
 .location-inner { max-width: 1100px; margin: 0 auto; }
 
 .location-masthead {
@@ -548,16 +539,16 @@ nav.scrolled {
 }
 .location-masthead .section-tag {
   font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
+  color: var(--gold-light); font-weight: 500;
   display: block; margin-bottom: 0.8rem;
 }
 .location-masthead h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 4.5vw, 4rem);
-  font-weight: 700; color: var(--navy); line-height: 1.05;
+  font-weight: 700; color: var(--cream); line-height: 1.05;
 }
 .location-masthead .sub {
-  color: var(--muted); font-size: 0.9rem; font-weight: 300;
+  color: rgba(255,255,255,0.82); font-size: 0.9rem; font-weight: 300;
   line-height: 1.8; align-self: end; padding-bottom: 0.3rem;
 }
 
