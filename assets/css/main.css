@@ -135,8 +135,7 @@ nav.scrolled {
 }
 .hero h1 .line-accent {
   display: block;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--gold);
+  color: var(--gold);
   font-style: italic;
 }
 .hero h1 .line-solid { display: block; }
