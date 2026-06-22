@@ -21,24 +21,23 @@ A free, family-friendly community event held annually in remembrance of Septembe
 
 ## Tech Stack
 
-- **Generator:** [Jekyll](https://jekyllrb.com/) static site
+- **Generator:** Plain static HTML (no build step)
 - **Hosting:** GitHub Pages with custom domain
 - **Fonts:** Cormorant Garamond (serif) + DM Sans (sans)
 - **CI/CD:** GitHub Actions — builds on every PR, deploys to GitHub Pages on merge to `main`
 
 ## Local Development
 
-```bash
-bundle install
-bundle exec jekyll serve
-# → http://localhost:4000
-```
+Open `index.html` directly in a browser, or use any static file server:
 
-Requires Ruby. If you don't have Bundler: `gem install bundler`.
+```bash
+npx serve
+# → http://localhost:3000
+```
 
 ## Deployment
 
-Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which builds the site with Jekyll and deploys it to GitHub Pages automatically.
+Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which copies the static files and deploys them to GitHub Pages automatically.
 
 GitHub Pages source must be set to **GitHub Actions** in repo Settings → Pages.
 
