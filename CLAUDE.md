@@ -1,11 +1,10 @@
 # America Strong Family Fest — CLAUDE.md
 
 ## Project overview
-Jekyll static site for **americastrongfamilyfest.com** — a free community event held September 12, 2026 at Saint Peter Lutheran Church, 18N377 Galligan Rd, Dundee, IL 60118. Hosted on GitHub Pages with a custom domain.
+Static site for **americastrongfamilyfest.com** — a free community event held September 12, 2026 at Saint Peter Lutheran Church, 18N377 Galligan Rd, Dundee, IL 60118. Hosted on GitHub Pages with a custom domain.
 
 ## Architecture
-- Single-page site: all content in `index.html` with Jekyll front matter
-- Layout shell in `_layouts/default.html` (Google Fonts, SEO tag)
+- Single-page site: all content in `index.html` (plain HTML, no templating)
 - Styles in `assets/css/main.css` — vanilla CSS, no preprocessor, no framework
 - JS in `assets/js/main.js` — vanilla JS (star canvas, nav scroll, cursor, form submit)
 - CI/CD via `.github/workflows/deploy.yml` — builds on PRs, deploys on push to `main`
@@ -27,14 +26,14 @@ Jekyll static site for **americastrongfamilyfest.com** — a free community even
 ## Development workflow
 - Branch: `claude/america-strong-family-fest-7fs37a` → PRs target `main`
 - All PRs are created as drafts
-- Jekyll build check runs on every PR via GitHub Actions
+- Build check runs on every PR via GitHub Actions
 - After any push, create a draft PR if one doesn't already exist
 
 ## Common tasks
 - **Content edits:** edit `index.html` directly — it's a single file
 - **Style changes:** edit `assets/css/main.css`
 - **JS changes:** edit `assets/js/main.js`
-- **Local preview:** `bundle install && bundle exec jekyll serve`
+- **Local preview:** open `index.html` in a browser, or use any static file server (e.g. `npx serve`)
 
 ## Do not
 - Add a third font family
