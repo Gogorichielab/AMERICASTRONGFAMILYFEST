@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-**All guidance for this repository lives in [`AGENTS.md`](./AGENTS.md). Read it before making any change.**
+**All guidance for this repository lives in [`Agent.md`](./Agent.md). Read it before making any change.**
 
-`AGENTS.md` is the single source of truth — project overview, architecture, design system, key facts, commit conventions, and recommended skills. Guidance is kept in one file deliberately, so the two cannot drift apart and start contradicting each other.
+`Agent.md` is the single source of truth — project overview, architecture, design system, key facts, commit conventions, and recommended skills. Guidance is kept in one file deliberately, so the two cannot drift apart and start contradicting each other.
 
-Do not add project guidance here. Edit `AGENTS.md` instead.
+Do not add project guidance here. Edit `Agent.md` instead.
 
 ---
 
@@ -12,7 +12,7 @@ Do not add project guidance here. Edit `AGENTS.md` instead.
 
 America Strong Family Fest is a **free community event** on **Saturday, September 12, 2026**, hosted at Saint Peter Lutheran Church in Gilberts, Illinois. This repo is its static, single-page, zero-dependency website — `index.html`, `assets/css/main.css`, `assets/js/main.js` — deployed to GitHub Pages.
 
-Four rules apply to every change. The reasoning behind each is in `AGENTS.md`:
+Four rules apply to every change. The reasoning behind each is in `Agent.md`:
 
 1. **Never invent a fact.** Dates, times, addresses, prices, and emails are what people plan their Saturday around. `grep` before editing one — most appear in five to eight places, including `<meta>` and Open Graph tags that are invisible when reading the rendered page.
 2. **Never publish an unconfirmed plan as confirmed.** If an organizer said "I have to confirm that," it does not ship as fact.
