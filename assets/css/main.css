@@ -335,12 +335,73 @@ nav.scrolled {
   line-height: 1.75; font-weight: 300;
   padding-top: 0.5rem;
 }
+.act-link {
+  color: var(--gold-light); text-decoration: none;
+  font-weight: 500; white-space: nowrap;
+  border-bottom: 1px solid rgba(232,190,106,0.35);
+  transition: border-color 0.2s;
+}
+.act-link:hover { border-bottom-color: var(--gold-light); }
 
 @media(max-width: 900px) {
   .act-header { grid-template-columns: 1fr; gap: 1rem; }
 }
 @media(max-width: 500px) {
   .act-row { grid-template-columns: 1fr; }
+}
+
+/* ── CLASSIC CAR SHOW ── */
+.carshow-section { background: var(--navy); padding: 8rem 3rem; }
+.carshow-inner { max-width: 1100px; margin: 0 auto; }
+
+.carshow-masthead {
+  display: grid; grid-template-columns: 5fr 7fr; gap: 6rem;
+  align-items: end; margin-bottom: 3.5rem;
+}
+.carshow-masthead .section-tag {
+  font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 500;
+  display: block; margin-bottom: 0.8rem;
+}
+.carshow-masthead h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 700; color: var(--cream); line-height: 1.05;
+}
+.carshow-masthead h2 em { font-style: italic; color: var(--gold-light); }
+.carshow-masthead p {
+  color: rgba(255,255,255,0.82); font-size: 0.9rem; font-weight: 300;
+  line-height: 1.8; align-self: end; padding-bottom: 0.3rem;
+}
+
+.carshow-body {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 3.5rem;
+  align-items: start;
+}
+.carshow-figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid rgba(201,150,58,0.28);
+}
+.carshow-figure figcaption {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 0.95rem;
+  color: rgba(248,242,230,0.5);
+  margin-top: 0.9rem;
+}
+.carshow-details h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 600;
+  color: var(--cream); margin-bottom: 1.2rem;
+}
+.carshow-note {
+  color: rgba(255,255,255,0.82); font-size: 0.88rem;
+  font-weight: 300; line-height: 1.8;
+  margin: 1.6rem 0 1.4rem;
+}
+
+@media(max-width: 900px) {
+  .carshow-masthead { grid-template-columns: 1fr; gap: 1.5rem; }
+  .carshow-body { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 /* ── SPONSOR ── */
@@ -663,7 +724,7 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
   .nav-links { display: none; }
   .hero { padding: 0 2rem; }
   .scroll-hint { left: 2rem; }
-  .activities-section, .volunteer-section, .location-section, .sponsor-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .activities-section, .carshow-section, .volunteer-section, .location-section, .sponsor-section { padding-left: 1.5rem; padding-right: 1.5rem; }
   .fg-row { grid-template-columns: 1fr; }
   .vol-roles { grid-template-columns: 1fr; }
   .hero-eyebrow { gap: 0.55rem; }
