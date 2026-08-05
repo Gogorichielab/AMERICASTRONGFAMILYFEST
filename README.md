@@ -13,7 +13,7 @@ A free, family-friendly community event held annually in remembrance of Septembe
 | **Date** | Saturday, September 12, 2026 |
 | **Time** | 10:00 AM – 3:00 PM |
 | **Venue** | Saint Peter Lutheran Church |
-| **Address** | 18N377 Galligan Rd, Dundee, IL 60118 |
+| **Address** | 985 Galligan Road, Gilberts, IL 60136 |
 | **Admission** | Free & open to the public |
 | **Ages** | All ages welcome |
 

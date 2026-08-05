@@ -1,4 +1,4 @@
-# AGENTS.md — America Strong Family Fest
+# Agent.md — America Strong Family Fest
 
 Canonical guidance for any AI coding agent working in this repository (Claude Code, Codex, Cursor, Windsurf, Copilot, and anything else following the Agent Skills / AGENTS.md conventions).
 
@@ -59,9 +59,8 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 
 - **Email:** info@americastrongfamilyfest.com — all contact, including sponsorship
 - **Venue:** Saint Peter Lutheran Church · https://stpeterlutheran.org/
-- **Address:** 18N377 Galligan Rd, Dundee, IL 60118
-  > ⚠️ **Pending change.** The venue has moved to **985 Galligan Road, Gilberts, IL 60136**. Tracked in issue #25, which lists all seven places the old address appears. Update this line and the Maps link in the same change.
-- **Google Maps link:** https://maps.google.com/?q=18N377+Galligan+Road+Dundee+IL+60118
+- **Address:** 985 Galligan Road, Gilberts, IL 60136
+- **Google Maps link:** https://maps.google.com/?q=985+Galligan+Road+Gilberts+IL+60136
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center
 
 Facts on this page are what people plan their Saturday around. **Never invent, guess, or "improve" a date, time, address, price, or email.** If a fact is missing, ask or leave it out.
@@ -88,7 +87,7 @@ Facts on this page are what people plan their Saturday around. **Never invent, g
 |---|---|
 | `feat` | A new user-visible capability — a new section, activity entry, form field, or interaction |
 | `fix` | Correcting something broken or wrong — a bad link, a wrong address, a layout bug |
-| `docs` | `README.md`, `AGENTS.md`, `CLAUDE.md`, comments — no change to the shipped site |
+| `docs` | `README.md`, `Agent.md`, `CLAUDE.md`, comments — no change to the shipped site |
 | `style` | **Formatting only** — whitespace, indentation, quote style. See the trap below |
 | `refactor` | Restructuring markup or CSS with no change to rendered output or behavior |
 | `perf` | Load time, render performance, image weight, animation cost |
