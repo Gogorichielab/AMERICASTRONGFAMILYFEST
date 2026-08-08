@@ -72,14 +72,16 @@ if (canvas) {
   drawStars();
 }
 
-// Volunteer form submit
-const submitBtn = document.querySelector('.form-submit');
-if (submitBtn) {
-  submitBtn.addEventListener('click', function (e) {
+// Volunteer form submit.
+// There is no backend yet, and action="#" on a static site means a real submit
+// would post into nothing. This used to paint a green "Thank You" that told
+// volunteers they had signed up when the data was discarded. Until the form has
+// a real destination, say so and point people at the email address instead.
+const volForm = document.querySelector('.vol-form-wrap');
+const volFormNote = document.getElementById('volFormNote');
+if (volForm && volFormNote) {
+  volForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    this.textContent = "✓ Thank You! We'll Be in Touch";
-    this.style.background = '#2D6A4F';
-    this.style.color = '#fff';
-    this.style.clipPath = 'none';
+    volFormNote.hidden = false;
   });
 }

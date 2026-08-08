@@ -594,6 +594,15 @@ nav.scrolled {
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
 .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+.form-note {
+  margin-top: 1.2rem; font-size: 0.8rem; font-weight: 300;
+  line-height: 1.7; color: rgba(255,255,255,0.82);
+  border-left: 2px solid var(--gold); padding-left: 1rem;
+}
+.form-note a, .vol-form-wrap .form-sub a {
+  color: var(--gold-light);
+  text-decoration: underline; text-underline-offset: 3px;
+}
 
 @media(max-width: 900px) {
   .vol-inner { grid-template-columns: 1fr; gap: 3rem; }
