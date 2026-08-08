@@ -1,4 +1,4 @@
-# Agent.md — America Strong Family Fest
+# AGENTS.md — America Strong Family Fest
 
 Canonical guidance for any AI coding agent working in this repository (Claude Code, Codex, Cursor, Windsurf, Copilot, and anything else following the Agent Skills / AGENTS.md conventions).
 
@@ -88,7 +88,7 @@ Facts on this page are what people plan their Saturday around. **Never invent, g
 |---|---|
 | `feat` | A new user-visible capability — a new section, activity entry, form field, or interaction |
 | `fix` | Correcting something broken or wrong — a bad link, a wrong address, a layout bug |
-| `docs` | `README.md`, `Agent.md`, `CLAUDE.md`, comments — no change to the shipped site |
+| `docs` | `README.md`, `AGENTS.md`, `CLAUDE.md`, comments — no change to the shipped site |
 | `style` | **Formatting only** — whitespace, indentation, quote style. See the trap below |
 | `refactor` | Restructuring markup or CSS with no change to rendered output or behavior |
 | `perf` | Load time, render performance, image weight, animation cost |
