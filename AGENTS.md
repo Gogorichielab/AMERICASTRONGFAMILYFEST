@@ -60,7 +60,7 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 - **Email:** info@americastrongfamilyfest.com — all contact, including sponsorship
 - **Venue:** Saint Peter Lutheran Church · https://stpeterlutheran.org/
 - **Address:** 985 Galligan Road, Gilberts, IL 60136
-- **Google Maps link:** https://maps.google.com/?q=985+Galligan+Road+Gilberts+IL+60136
+- **OpenStreetMap link:** https://www.openstreetmap.org/search?query=985+Galligan+Road%2C+Gilberts%2C+IL+60136
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center
 
 Facts on this page are what people plan their Saturday around. **Never invent, guess, or "improve" a date, time, address, price, or email.** If a fact is missing, ask or leave it out.
