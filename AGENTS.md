@@ -10,7 +10,7 @@ Canonical guidance for any AI coding agent working in this repository (Claude Co
 
 Static marketing site for **[americastrongfamilyfest.com](https://americastrongfamilyfest.com)**.
 
-America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at Saint Peter Lutheran Church in Gilberts, Illinois. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
+America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at St. Peter Lutheran Church in Gilberts, Illinois. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
 
 The site exists to do four things, in priority order:
 
@@ -58,7 +58,7 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 ## Key facts (keep accurate)
 
 - **Email:** info@americastrongfamilyfest.com — all contact, including sponsorship
-- **Venue:** Saint Peter Lutheran Church · https://stpeterlutheran.org/
+- **Venue:** St. Peter Lutheran Church · https://stpeterlutheran.org/
 - **Address:** 985 Galligan Road, Gilberts, IL 60136
 - **OpenStreetMap link:** https://www.openstreetmap.org/search?query=985+Galligan+Road%2C+Gilberts%2C+IL+60136
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center
