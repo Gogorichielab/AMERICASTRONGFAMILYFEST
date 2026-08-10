@@ -637,11 +637,16 @@ nav.scrolled {
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(10,31,92,0.18);
 }
-/* The grid pattern sits behind the map iframe, so a blocked or slow-loading
-   embed degrades to a styled panel rather than an empty box. The address and
-   Get Directions button below the map stay usable either way. */
 .location-map {
-  background-color: var(--navy);
+  background: linear-gradient(135deg, var(--navy) 0%, #112266 100%);
+  min-height: 320px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.map-viewport { position: relative; flex: 1; min-height: 240px; }
+.map-fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
   background-image:
     linear-gradient(rgba(201,150,58,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(201,150,58,0.06) 1px, transparent 1px),
@@ -653,14 +658,22 @@ nav.scrolled {
   display: block; width: 100%; border: 0;
   flex: 1 1 auto; min-height: 320px;
 }
-.map-bar {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 1rem; padding: 1.75rem 2rem;
+.map-pin { font-size: 3.5rem; animation: pinBounce 2s ease-in-out infinite; }
+@keyframes pinBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.location-map-frame {
+  position: relative; z-index: 1; display: block;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.map-caption {
+  padding: 1.75rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(201,150,58,0.22);
 }
 .map-label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem; color: var(--gold-light);
-  font-style: italic; text-align: center;
+  font-style: italic; position: relative; z-index: 1; text-align: center;
 }
 .location-details { padding: 3rem; text-align: left; }
 .location-details h3 {

@@ -61,7 +61,8 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 - **Venue:** St. Peter Lutheran Church · https://stpeterlutheran.org/
 - **Address:** 985 Galligan Road, Gilberts, IL 60136
 - **Naming, decided — use these exact forms everywhere:** `St. Peter Lutheran Church` (abbreviated, not "Saint Peter") and `Gilberts, IL` (not "Gilberts, Illinois"). Both appear in `<meta>` and Open Graph tags as well as visible copy, so a partial change leaves the page contradicting itself
-- **Google Maps link:** https://maps.google.com/?q=985+Galligan+Road+Gilberts+IL+60136
+- **OpenStreetMap link:** https://www.openstreetmap.org/?mlat=42.1302386&mlon=-88.3733207#map=17/42.1302386/-88.3733207
+- **Map coordinates:** `42.1302386, -88.3733207` — the embedded map marker and the Get Directions pin. Sourced from the OSM `place_of_worship` node named "St. Peter Lutheran Church" on Galligan Road in Gilberts 60136 (forward and reverse geocode agree). OSM has no house number on that node, so if the pin is ever reported as off, re-verify against the building rather than trusting a road-level geocode.
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center
 
 Facts on this page are what people plan their Saturday around. **Never invent, guess, or "improve" a date, time, address, price, or email.** If a fact is missing, ask or leave it out.
