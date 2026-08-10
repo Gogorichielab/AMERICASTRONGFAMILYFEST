@@ -649,14 +649,8 @@ nav.scrolled {
   display: flex; align-items: center; justify-content: center;
   background-image:
     linear-gradient(rgba(201,150,58,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,150,58,0.06) 1px, transparent 1px),
-    linear-gradient(135deg, var(--navy) 0%, #112266 100%);
-  background-size: 40px 40px, 40px 40px, 100% 100%;
-  display: flex; flex-direction: column;
-}
-.location-map iframe {
-  display: block; width: 100%; border: 0;
-  flex: 1 1 auto; min-height: 320px;
+    linear-gradient(90deg, rgba(201,150,58,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 .map-pin { font-size: 3.5rem; animation: pinBounce 2s ease-in-out infinite; }
 @keyframes pinBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
