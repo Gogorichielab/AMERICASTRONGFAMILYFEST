@@ -2,7 +2,7 @@
 
 **Website:** [americastrongfamilyfest.com](https://americastrongfamilyfest.com)
 
-A free, family-friendly community event held annually in remembrance of September 11th at Saint Peter Lutheran Church in Gilberts, Illinois.
+A free, family-friendly community event held annually in remembrance of September 11th at St. Peter Lutheran Church in Gilberts, Illinois.
 
 ---
 
@@ -12,7 +12,7 @@ A free, family-friendly community event held annually in remembrance of Septembe
 |---|---|
 | **Date** | Saturday, September 12, 2026 |
 | **Time** | 10:00 AM – 3:00 PM |
-| **Venue** | Saint Peter Lutheran Church |
+| **Venue** | St. Peter Lutheran Church |
 | **Address** | 985 Galligan Road, Gilberts, IL 60136 |
 | **Admission** | Free & open to the public |
 | **Ages** | All ages welcome |

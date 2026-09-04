@@ -1,4 +1,4 @@
-# Agent.md — America Strong Family Fest
+# AGENTS.md — America Strong Family Fest
 
 Canonical guidance for any AI coding agent working in this repository (Claude Code, Codex, Cursor, Windsurf, Copilot, and anything else following the Agent Skills / AGENTS.md conventions).
 
@@ -10,7 +10,7 @@ Canonical guidance for any AI coding agent working in this repository (Claude Co
 
 Static marketing site for **[americastrongfamilyfest.com](https://americastrongfamilyfest.com)**.
 
-America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at Saint Peter Lutheran Church in Gilberts, Illinois. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
+America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at St. Peter Lutheran Church in Gilberts, Illinois. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
 
 The site exists to do four things, in priority order:
 
@@ -58,9 +58,10 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 ## Key facts (keep accurate)
 
 - **Email:** info@americastrongfamilyfest.com — all contact, including sponsorship
-- **Venue:** Saint Peter Lutheran Church · https://stpeterlutheran.org/
+- **Venue:** St. Peter Lutheran Church · https://stpeterlutheran.org/
 - **Address:** 985 Galligan Road, Gilberts, IL 60136
-- **Google Maps link:** https://maps.google.com/?q=985+Galligan+Road+Gilberts+IL+60136
+- **OpenStreetMap link:** https://www.openstreetmap.org/?mlat=42.1302386&mlon=-88.3733207#map=17/42.1302386/-88.3733207
+- **Map coordinates:** `42.1302386, -88.3733207` — the embedded map marker and the Get Directions pin. Sourced from the OSM `place_of_worship` node named "St. Peter Lutheran Church" on Galligan Road in Gilberts 60136 (forward and reverse geocode agree). OSM has no house number on that node, so if the pin is ever reported as off, re-verify against the building rather than trusting a road-level geocode.
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center
 
 Facts on this page are what people plan their Saturday around. **Never invent, guess, or "improve" a date, time, address, price, or email.** If a fact is missing, ask or leave it out.
@@ -87,7 +88,7 @@ Facts on this page are what people plan their Saturday around. **Never invent, g
 |---|---|
 | `feat` | A new user-visible capability — a new section, activity entry, form field, or interaction |
 | `fix` | Correcting something broken or wrong — a bad link, a wrong address, a layout bug |
-| `docs` | `README.md`, `Agent.md`, `CLAUDE.md`, comments — no change to the shipped site |
+| `docs` | `README.md`, `AGENTS.md`, `CLAUDE.md`, comments — no change to the shipped site |
 | `style` | **Formatting only** — whitespace, indentation, quote style. See the trap below |
 | `refactor` | Restructuring markup or CSS with no change to rendered output or behavior |
 | `perf` | Load time, render performance, image weight, animation cost |
