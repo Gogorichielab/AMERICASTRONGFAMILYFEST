@@ -448,16 +448,29 @@
 
     <form class="vol-form-wrap" action="#" method="POST">
       <h3>Sign Up to Volunteer</h3>
-      <p class="form-sub">To volunteer right now, please email <a href="mailto:info@americastrongfamilyfest.com">info@americastrongfamilyfest.com</a> &mdash; online sign-up is not connected yet.</p>
+      <p class="form-sub" id="volFormHelp">To volunteer right now, please email <a href="mailto:info@americastrongfamilyfest.com">info@americastrongfamilyfest.com</a> &mdash; online sign-up is not connected yet.</p>
+      <p class="form-req" aria-hidden="true">* Required</p>
       <div class="fg-row">
-        <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Jane"></div>
-        <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
+        <div class="fg">
+          <label for="volFirstName">First Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="volFirstName" name="first_name" placeholder="Jane" autocomplete="given-name" required>
+        </div>
+        <div class="fg">
+          <label for="volLastName">Last Name</label>
+          <input type="text" id="volLastName" name="last_name" placeholder="Smith" autocomplete="family-name">
+        </div>
       </div>
-      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="jane@email.com"></div>
-      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(555) 000-0000"></div>
       <div class="fg">
-        <label>Preferred Role</label>
-        <select name="role">
+        <label for="volEmail">Email Address <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" id="volEmail" name="email" placeholder="jane@email.com" autocomplete="email" required>
+      </div>
+      <div class="fg">
+        <label for="volPhone">Phone Number</label>
+        <input type="tel" id="volPhone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+      </div>
+      <div class="fg">
+        <label for="volRole">Preferred Role</label>
+        <select id="volRole" name="role">
           <option>General Support</option>
           <option>Kids Activities</option>
           <option>Set-Up / Tear-Down</option>
@@ -467,8 +480,8 @@
         </select>
       </div>
       <div class="fg">
-        <label>Availability</label>
-        <select name="availability">
+        <label for="volAvailability">Availability</label>
+        <select id="volAvailability" name="availability">
           <option>All Day (10 AM &ndash; 3 PM)</option>
           <option>Morning Only (10 AM &ndash; 12 PM)</option>
           <option>Afternoon Only (12 PM &ndash; 3 PM)</option>
@@ -476,7 +489,7 @@
           <option>Tear-Down (after 3 PM)</option>
         </select>
       </div>
-      <button type="submit" class="form-submit">Submit My Interest &rarr;</button>
+      <button type="submit" class="form-submit" aria-describedby="volFormHelp">Submit My Interest &rarr;</button>
       <p class="form-note" id="volFormNote" role="status" hidden>This form does not reach us yet. Please email <a href="mailto:info@americastrongfamilyfest.com">info@americastrongfamilyfest.com</a> with your name, preferred role, and availability, and we will add you to the list.</p>
     </form>
   </div>

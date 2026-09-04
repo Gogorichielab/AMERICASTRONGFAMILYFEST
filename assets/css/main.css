@@ -36,12 +36,37 @@ body {
   border: 1.5px solid var(--gold); border-radius: 50%;
   pointer-events: none; z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: transform 0.18s ease, width 0.2s, height 0.2s, opacity 0.2s;
+  transition: transform 0.18s ease, width 0.2s, height 0.2s, opacity 0.2s, background 0.2s, border-color 0.2s;
   opacity: 0.6;
 }
+/* Hiding the system pointer removes the universal "this is clickable" signal.
+   Grow and fill the ring over interactive elements to put that signal back. */
+.cursor-interactive .cursor-ring {
+  width: 54px; height: 54px; opacity: 1;
+  border-color: var(--gold-light);
+  background: rgba(201,150,58,0.14);
+}
+.cursor-interactive .cursor { background: var(--gold-light); }
 @media (hover: none) {
   *, *::before, *::after { cursor: auto !important; }
   .cursor, .cursor-ring { display: none; }
+}
+
+/* Reduced motion. This setting is how people with vestibular disorders,
+   migraine sensitivity and some attention conditions ask for motion to stop,
+   so honour it site-wide: no drifting stars, no scrolling stripes, no pulsing
+   or bouncing, no smooth scroll, and the real system cursor back. Content is
+   never hidden, it just arrives without movement. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after { cursor: auto !important; }
+  .cursor, .cursor-ring { display: none !important; }
 }
 
 /* ── NAV ── */
@@ -625,14 +650,19 @@ nav.scrolled {
   color: var(--cream); margin-bottom: 0.4rem;
 }
 .vol-form-wrap .form-sub {
-  color: rgba(255,255,255,0.38); font-size: 0.8rem;
-  font-weight: 300; margin-bottom: 2rem;
+  color: rgba(255,255,255,0.62); font-size: 0.8rem;
+  font-weight: 300; margin-bottom: 0.9rem;
 }
+.vol-form-wrap .form-req {
+  color: rgba(255,255,255,0.62); font-size: 0.72rem;
+  font-weight: 400; margin-bottom: 1.6rem;
+}
+.fg label .req { color: var(--gold-light); }
 .fg { margin-bottom: 1.2rem; }
 .fg label {
   display: block; font-size: 0.67rem;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.62);
   margin-bottom: 0.45rem; font-weight: 500;
 }
 .fg input, .fg select {
@@ -644,7 +674,7 @@ nav.scrolled {
   outline: none; transition: border-color 0.2s, background 0.2s;
   -webkit-appearance: none; border-radius: 0;
 }
-.fg input::placeholder { color: rgba(255,255,255,0.18); }
+.fg input::placeholder { color: rgba(255,255,255,0.5); }
 .fg input:focus, .fg select:focus {
   border-color: var(--gold); background: rgba(255,255,255,0.09);
 }
