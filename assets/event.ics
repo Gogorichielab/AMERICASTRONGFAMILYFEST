@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//America Strong Family Fest//Event//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20260912-america-strong-family-fest@americastrongfamilyfest.com
+DTSTAMP:20260904T000000Z
+DTSTART:20260912T150000Z
+DTEND:20260912T200000Z
+SUMMARY:America Strong Family Fest
+DESCRIPTION:A free community celebration honoring America's strength and
+  resilience. Free admission\, all ages welcome.
+LOCATION:St. Peter Lutheran Church\, 985 Galligan Road\, Gilberts\, IL
+  60136
+URL:https://americastrongfamilyfest.com
+END:VEVENT
+END:VCALENDAR
