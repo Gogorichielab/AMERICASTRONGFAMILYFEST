@@ -330,15 +330,6 @@ nav.scrolled {
   color: var(--cream); line-height: 1.1;
 }
 
-/* Marks an activity the organizers have planned but not yet confirmed. */
-.act-tag {
-  display: inline-block; margin-top: 0.6rem;
-  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-  font-weight: 500; color: var(--gold-light);
-  border: 1px solid rgba(232,190,106,0.4);
-  padding: 0.25rem 0.6rem;
-}
-
 .act-desc {
   font-size: 0.9rem; color: rgba(255,255,255,0.82);
   line-height: 1.75; font-weight: 300;
@@ -357,6 +348,81 @@ nav.scrolled {
 }
 @media(max-width: 500px) {
   .act-row { grid-template-columns: 1fr; }
+}
+
+/* ── SCHEDULE ── */
+.schedule-section { background: var(--cream); padding: 8rem 3rem; }
+.schedule-inner { max-width: 1100px; margin: 0 auto; }
+
+.schedule-masthead {
+  display: grid; grid-template-columns: 5fr 7fr; gap: 6rem;
+  align-items: end; margin-bottom: 3.5rem;
+}
+.schedule-masthead .section-tag {
+  font-size: 0.68rem; letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--red); font-weight: 500;
+  display: block; margin-bottom: 0.8rem;
+}
+.schedule-masthead h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 700; color: var(--navy); line-height: 1.05;
+}
+.schedule-masthead h2 em { font-style: italic; color: var(--red); }
+.schedule-masthead p {
+  color: var(--muted); font-size: 0.9rem; font-weight: 300;
+  line-height: 1.8; align-self: end; padding-bottom: 0.3rem;
+}
+
+.schedule-list { list-style: none; }
+.sched-block {
+  display: grid; grid-template-columns: 14rem 1fr;
+  gap: 0 3.5rem;
+  padding: 2.4rem 0;
+  border-bottom: 1px solid rgba(10,31,92,0.14);
+}
+.sched-block:last-child { border-bottom: none; }
+
+.sched-time { padding-top: 0.15rem; }
+.sched-hour {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--navy); line-height: 1.05;
+}
+.sched-label {
+  display: block; margin-top: 0.35rem;
+  font-size: 0.64rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--red); font-weight: 500;
+}
+
+.sched-items { list-style: none; }
+.sched-items li {
+  display: flex; justify-content: space-between;
+  align-items: baseline; gap: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted rgba(10,31,92,0.16);
+}
+.sched-items li:last-child { border-bottom: none; }
+.si-name { font-size: 0.92rem; font-weight: 400; color: var(--text); line-height: 1.5; }
+.si-when {
+  font-size: 0.78rem; font-weight: 500; color: var(--muted);
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+.schedule-note {
+  margin-top: 2.5rem;
+  font-size: 0.82rem; font-weight: 300; font-style: italic;
+  color: var(--muted); line-height: 1.7;
+}
+
+@media(max-width: 900px) {
+  .schedule-masthead { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+@media(max-width: 640px) {
+  .sched-block { grid-template-columns: 1fr; gap: 1.1rem; padding: 2rem 0; }
+  .sched-items li { flex-direction: column; gap: 0.15rem; }
+  .si-when { font-size: 0.75rem; }
 }
 
 /* ── CLASSIC CAR SHOW ── */
@@ -740,6 +806,9 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
 .footer-bottom .stripe:nth-child(even) { background: rgba(255,255,255,0.25); }
 
 /* ── GLOBAL RESPONSIVE ── */
+@media(max-width: 1080px) {
+  .nav-links { gap: 1.6rem; }
+}
 @media(max-width: 900px) {
   .about { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem; }
   nav { padding: 1rem 1.5rem; }
@@ -753,7 +822,7 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
   .nav-links { display: none; }
   .hero { padding: 0 2rem; }
   .scroll-hint { left: 2rem; }
-  .activities-section, .carshow-section, .volunteer-section, .location-section, .sponsor-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .activities-section, .schedule-section, .carshow-section, .volunteer-section, .location-section, .sponsor-section { padding-left: 1.5rem; padding-right: 1.5rem; }
   .fg-row { grid-template-columns: 1fr; }
   .vol-roles { grid-template-columns: 1fr; }
   .hero-eyebrow { gap: 0.55rem; }
