@@ -10,7 +10,7 @@ Canonical guidance for any AI coding agent working in this repository (Claude Co
 
 Static marketing site for **[americastrongfamilyfest.com](https://americastrongfamilyfest.com)**.
 
-America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at St. Peter Lutheran Church in Gilberts, Illinois. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
+America Strong Family Fest is a **free, family-friendly community event** held in remembrance of September 11th, hosted at St. Peter Lutheran Church in Gilberts, IL. The next event is **Saturday, September 12, 2026, 10:00 AM – 3:00 PM**. Admission is free and open to the public, all ages.
 
 The site exists to do four things, in priority order:
 
@@ -60,6 +60,7 @@ Navigation is anchor-based within the one page: `#about`, `#activities`, `#spons
 - **Email:** info@americastrongfamilyfest.com — all contact, including sponsorship
 - **Venue:** St. Peter Lutheran Church · https://stpeterlutheran.org/
 - **Address:** 985 Galligan Road, Gilberts, IL 60136
+- **Naming, decided — use these exact forms everywhere:** `St. Peter Lutheran Church` (abbreviated, not "Saint Peter") and `Gilberts, IL` (not "Gilberts, Illinois"). Both appear in `<meta>` and Open Graph tags as well as visible copy, so a partial change leaves the page contradicting itself
 - **OpenStreetMap link:** https://www.openstreetmap.org/?mlat=42.1302386&mlon=-88.3733207#map=17/42.1302386/-88.3733207
 - **Map coordinates:** `42.1302386, -88.3733207` — the embedded map marker and the Get Directions pin. Sourced from the OSM `place_of_worship` node named "St. Peter Lutheran Church" on Galligan Road in Gilberts 60136 (forward and reverse geocode agree). OSM has no house number on that node, so if the pin is ever reported as off, re-verify against the building rather than trusting a road-level geocode.
 - **Sponsorship tiers:** Silver $150 / Gold $500 / Platinum $1,000+ — Gold is the featured "most popular" tier and belongs in the center

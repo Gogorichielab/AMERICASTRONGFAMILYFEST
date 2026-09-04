@@ -2,7 +2,7 @@
 
 **Website:** [americastrongfamilyfest.com](https://americastrongfamilyfest.com)
 
-A free, family-friendly community event held annually in remembrance of September 11th at St. Peter Lutheran Church in Gilberts, Illinois.
+A free, family-friendly community event held annually in remembrance of September 11th at St. Peter Lutheran Church in Gilberts, IL.
 
 ---
 

@@ -10,7 +10,7 @@ Do not add project guidance here. Edit `AGENTS.md` instead.
 
 ## The short version
 
-America Strong Family Fest is a **free community event** on **Saturday, September 12, 2026**, hosted at St. Peter Lutheran Church in Gilberts, Illinois. This repo is its static, single-page, zero-dependency website — `index.html`, `assets/css/main.css`, `assets/js/main.js` — deployed to GitHub Pages.
+America Strong Family Fest is a **free community event** on **Saturday, September 12, 2026**, hosted at St. Peter Lutheran Church in Gilberts, IL. This repo is its static, single-page, zero-dependency website — `index.html`, `assets/css/main.css`, `assets/js/main.js` — deployed to GitHub Pages.
 
 Four rules apply to every change. The reasoning behind each is in `AGENTS.md`:
 
