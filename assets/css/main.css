@@ -148,14 +148,11 @@ nav.scrolled {
     rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.85) 100%
   );
   background-size: 60px 100%;
-  animation: stripeScroll 6s linear infinite;
 }
-@keyframes stripeScroll { from { background-position: 0 0; } to { background-position: 60px 0; } }
 
 .hero-content {
   position: relative; z-index: 3;
   max-width: 900px;
-  animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @keyframes heroReveal {
   from { opacity: 0; transform: translateY(40px); }
@@ -179,7 +176,6 @@ nav.scrolled {
   font-size: clamp(4.5rem, 13vw, 11rem);
   font-weight: 700; line-height: 0.88;
   color: var(--cream);
-  animation: heroReveal 1s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .hero h1 .line-accent {
   display: block;
@@ -227,7 +223,7 @@ nav.scrolled {
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 .btn-ghost {
   background: transparent; color: var(--cream);
-  border: 1px solid rgba(255,255,255,0.28);
+  border: 1px solid rgba(255,255,255,0.7);
   font-family: 'DM Sans', sans-serif; font-weight: 300;
   font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.9rem 2.1rem;

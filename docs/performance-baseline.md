@@ -7,7 +7,7 @@ Site: `https://americastrongfamilyfest.com/`
 
 The site is plain static HTML, CSS, and JavaScript with no framework, package dependencies, or client-side data fetch during initial rendering. The production baseline before this change used a 253,076-byte, 1400-by-933 JPEG for the car-show photograph.
 
-This change adds a 169,844-byte WebP source while retaining a 190,350-byte compressed progressive JPEG fallback and the existing explicit image dimensions. That reduces the modern-browser photo transfer by about 33% from the original JPEG. The image stays lazy-loaded because it is below the fold. The embedded map also has explicit dimensions and remains lazy-loaded. JavaScript remains deferred, the web-font stylesheet loads without blocking the first render, and the animated hero canvas pauses when it is outside the viewport or reduced motion is requested.
+This change adds a 169,844-byte WebP source while retaining a 190,350-byte compressed progressive JPEG fallback and the existing explicit image dimensions. That reduces the modern-browser photo transfer by about 33% from the original JPEG. The image stays lazy-loaded because it is below the fold. The embedded map also has explicit dimensions and remains lazy-loaded. JavaScript remains deferred, the web-font stylesheet loads without blocking the first render, and the animated hero canvas pauses when it is outside the viewport or reduced motion is requested. The largest hero heading is immediately paintable instead of waiting for an entrance animation, and the decorative stripe no longer triggers a non-composited animation warning.
 
 ## Repository performance budgets
 
