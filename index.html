@@ -80,7 +80,12 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">&#127482;&#127480; America Strong</div>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+  <div class="nav-links" id="primaryNav">
     <a href="#about">About</a>
     <a href="#activities">Activities</a>
     <a href="#schedule">Schedule</a>
@@ -374,8 +379,11 @@
 
     <div class="carshow-body">
       <figure class="carshow-figure">
-        <img src="assets/img/car-show-2025.jpg" width="1400" height="933" loading="lazy" decoding="async"
-             alt="Classic cars and a vintage pickup truck parked on the grass in front of St. Peter Lutheran Church, with visitors walking between them on a sunny day.">
+        <picture>
+          <source srcset="assets/img/car-show-2025.webp" type="image/webp">
+          <img src="assets/img/car-show-2025.jpg" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Classic cars and a vintage pickup truck parked on the grass in front of St. Peter Lutheran Church, with visitors walking between them on a sunny day.">
+        </picture>
         <figcaption>Cars on the lawn at our 2025 show, St. Peter Lutheran Church.</figcaption>
       </figure>
 
@@ -409,7 +417,7 @@
     </div>
 
     <div class="tier-grid">
-      <div class="tier-card">
+      <div class="tier-card tier-silver">
         <div class="tier-name">Silver</div>
         <div class="tier-price">$150</div>
         <ul class="tier-features">
@@ -417,7 +425,7 @@
           <li>Contact us to discuss this sponsorship level</li>
         </ul>
       </div>
-      <div class="tier-card featured">
+      <div class="tier-card tier-gold featured">
         <div class="tier-name">Gold</div>
         <div class="tier-price">$500</div>
         <ul class="tier-features">
@@ -425,7 +433,7 @@
           <li>Contact us to discuss this sponsorship level</li>
         </ul>
       </div>
-      <div class="tier-card">
+      <div class="tier-card tier-platinum">
         <div class="tier-name">Platinum</div>
         <div class="tier-price">$1,000+</div>
         <ul class="tier-features">
@@ -526,6 +534,7 @@
           <iframe class="location-map-frame"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-88.3793207%2C42.1267386%2C-88.3673207%2C42.1337386&amp;layer=mapnik&amp;marker=42.1302386%2C-88.3733207"
                   title="Map showing St. Peter Lutheran Church at 985 Galligan Road, Gilberts, IL 60136"
+                  width="600" height="400"
                   loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="map-caption">
@@ -541,7 +550,7 @@
       <div class="location-details">
         <h3>Event Location</h3>
         <ul class="loc-list">
-          <li><span class="l-icon">&#9961;</span><div class="l-text"><strong>Venue</strong><span><a href="https://stpeterlutheran.org/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.68);text-decoration:underline;text-underline-offset:3px;">St. Peter Lutheran Church</a></span></div></li>
+          <li><span class="l-icon">&#9961;</span><div class="l-text"><strong>Venue</strong><span><a class="venue-link" href="https://stpeterlutheran.org/" target="_blank" rel="noopener">St. Peter Lutheran Church</a></span></div></li>
           <li><span class="l-icon">&#128205;</span><div class="l-text"><strong>Address</strong><span>985 Galligan Road, Gilberts, IL 60136</span></div></li>
           <li><span class="l-icon">&#128197;</span><div class="l-text"><strong>Date</strong><span>Saturday, September 12, 2026</span></div></li>
           <li><span class="l-icon">&#9200;</span><div class="l-text"><strong>Hours</strong><span>10:00 AM &ndash; 3:00 PM</span></div></li>
@@ -591,6 +600,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
