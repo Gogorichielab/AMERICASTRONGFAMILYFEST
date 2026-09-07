@@ -884,3 +884,61 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
 @media(max-width: 380px) {
   .eyebrow-text { font-size: 0.52rem; letter-spacing: 0.1em; }
 }
+
+/* ── NOT FOUND ── */
+.error-page, .error-page * { cursor: auto !important; }
+.error-page { background: var(--navy); }
+.error-main {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: space-between;
+  overflow: hidden; padding: 2.5rem clamp(1.5rem, 6vw, 5rem) 2rem;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 15%, rgba(192,40,45,0.18), transparent 65%),
+    radial-gradient(ellipse 55% 65% at 90% 80%, rgba(201,150,58,0.08), transparent 70%),
+    var(--navy-deep);
+}
+.error-brand {
+  position: relative; z-index: 1; align-self: flex-start;
+  color: var(--gold); font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.18em; text-decoration: none; text-transform: uppercase;
+}
+.error-content { position: relative; z-index: 1; width: min(700px, 100%); margin: 4rem 0; }
+.error-code {
+  position: absolute; top: 50%; left: clamp(8rem, 35vw, 24rem); z-index: -1;
+  color: rgba(248,242,230,0.035); font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18rem, 40vw, 36rem); font-weight: 700; line-height: 0.6;
+  transform: translateY(-50%); user-select: none;
+}
+.error-tag {
+  color: var(--gold-light); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.32em; text-transform: uppercase;
+}
+.error-content h1 {
+  margin: 1.25rem 0 1.5rem; color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.75rem, 9vw, 7rem); font-weight: 700; line-height: 0.88;
+}
+.error-content h1 em { color: var(--gold); }
+.error-message {
+  max-width: 580px; margin-bottom: 2rem;
+  color: rgba(248,242,230,0.72); font-size: 1rem; line-height: 1.8;
+}
+.error-event {
+  position: relative; z-index: 1; color: rgba(248,242,230,0.5);
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.error-event span { margin: 0 0.5rem; color: var(--gold); }
+.error-stripes {
+  position: absolute; right: 0; bottom: 0; left: 0; height: 5px;
+  background: repeating-linear-gradient(
+    90deg, var(--red) 0, var(--red) 50%,
+    rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.85) 100%
+  );
+  background-size: 60px 100%;
+}
+@media(max-width: 600px) {
+  .error-main { min-height: 100svh; padding-top: 1.75rem; }
+  .error-content { margin: 3rem 0; }
+  .error-code { left: 4rem; }
+  .error-event { font-size: 0.65rem; line-height: 1.7; }
+}
