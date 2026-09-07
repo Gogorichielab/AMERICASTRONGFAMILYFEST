@@ -14,6 +14,7 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 5.5rem; }
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--offwhite);
@@ -872,6 +873,7 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media(max-width: 600px) {
+  section[id] { scroll-margin-top: 4rem; }
   .nav-links { display: none; }
   .hero { padding: 0 2rem; }
   .scroll-hint { left: 2rem; }
