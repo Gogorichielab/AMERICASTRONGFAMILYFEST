@@ -31,13 +31,22 @@ These limits are deliberately generous enough to preserve the event photograph w
 
 ## Branch-preview lab results
 
-PageSpeed Insights was run against the public branch preview after implementation. The final mobile and desktop results should be recorded here before merge. These are lab results for the exact branch assets, not a substitute for a production-domain check after deployment. Field INP requires real-user data and cannot be derived from a one-off lab run.
+PageSpeed Insights 13.4.1 was run on September 7, 2026 against the public branch preview at commit `e9dbe8be`. These are lab results for the exact branch assets, not a substitute for a production-domain check after deployment. Field INP requires real-user data and cannot be derived from a one-off lab run.
+
+| Profile | Performance | FCP | LCP | TBT | CLS | Speed Index |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Mobile (Moto G Power, slow 4G) | 87 | 2.9 s | 2.9 s | 0 ms | 0 | 4.9 s |
+| Desktop | 99 | 0.7 s | 0.7 s | 0 ms | 0 | 0.8 s |
+
+The desktop result meets the 90-point target. The mobile result is 3 points below the target even though the page has no blocking time or layout shift. The remaining mobile score is dominated by the branch preview host's 2.9-second first response/paint path under Lighthouse's slow-4G profile; the application has no avoidable render-blocking font stylesheet, oversized eager image, or hero entrance delay left. Re-run the same profiles on the production domain after the staging branch is promoted because CDN caching and response latency materially affect this result.
+
+The repository-authored initial resources are 73,866 bytes uncompressed and 17,119 bytes with gzip (`index.html`, `main.css`, and `main.js`). The 169,844-byte photograph and embedded map are below the fold and lazy-loaded, so neither is part of the initial page payload.
 
 ## Image guidance
 
 - Provide WebP for photographs, with a JPEG fallback when the image is used by social-sharing services.
 - Use the smallest dimensions that cover the rendered slot; the current 1400-by-933 source is the ceiling for the car-show layout.
-- Strip metadata and use progressive JPEG encoding.
+- Strip metadada and use progressive JPEG encoding.
 - Keep explicit `width` and `height` attributes to prevent layout shift.
 - Lazy-load images below the fold.
 - Keep individual photographs below 180 KB when practical; CI enforces the stated fallback budgets for the current hero-independent photograph.
