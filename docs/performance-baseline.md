@@ -7,7 +7,7 @@ Site: `https://americastrongfamilyfest.com/`
 
 The site is plain static HTML, CSS, and JavaScript with no framework, package dependencies, or client-side data fetch during initial rendering. The production baseline before this change used a 253,076-byte, 1400-by-933 JPEG for the car-show photograph.
 
-This change adds a 169,844-byte WebP source while retaining a 190,350-byte compressed progressive JPEG fallback and the existing explicit image dimensions. That reduces the modern-browser photo transfer by about 33% from the original JPEG. The image stays lazy-loaded because it is below the fold. The embedded map also has explicit dimensions and remains lazy-loaded. JavaScript remains deferred, and the animated hero canvas pauses when it is outside the viewport or reduced motion is requested.
+This change adds a 169,844-byte WebP source while retaining a 190,350-byte compressed progressive JPEG fallback and the existing explicit image dimensions. That reduces the modern-browser photo transfer by about 33% from the original JPEG. The image stays lazy-loaded because it is below the fold. The embedded map also has explicit dimensions and remains lazy-loaded. JavaScript remains deferred, the web-font stylesheet loads without blocking the first render, and the animated hero canvas pauses when it is outside the viewport or reduced motion is requested.
 
 ## Repository performance budgets
 
@@ -29,7 +29,9 @@ These limits are deliberately generous enough to preserve the event photograph w
 | Interaction to Next Paint | 200 milliseconds or less |
 | Total Blocking Time | 200 milliseconds or less |
 
-The repository has no supported browser binary in its validation environment, so a synthetic Lighthouse score is not fabricated here. After this branch is deployed, run Lighthouse against the production URL on mobile and desktop and attach the report to issue #63. Field INP requires real-user data and cannot be derived from a one-off local test.
+## Branch-preview lab results
+
+PageSpeed Insights was run against the public branch preview after implementation. The final mobile and desktop results should be recorded here before merge. These are lab results for the exact branch assets, not a substitute for a production-domain check after deployment. Field INP requires real-user data and cannot be derived from a one-off lab run.
 
 ## Image guidance
 
