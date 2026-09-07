@@ -39,6 +39,8 @@ npx serve
 
 Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which copies the static files and deploys them to GitHub Pages automatically.
 
+The workflow is adapted from the organization GitHub Pages template at commit `6599d2688f322bb63a01452e032777d7c0bf6eb9`. Repository-specific adaptations preserve the zero-dependency `_site` staging step, custom domain, static performance budgets, and production-only Pages permissions.
+
 GitHub Pages source must be set to **GitHub Actions** in repo Settings → Pages.
 
 ## Contact
