@@ -315,16 +315,45 @@ if (carShowRegisterLink) {
   });
 }
 
-// Volunteer form submit.
-// There is no backend yet, and action="#" on a static site means a real submit
-// would post into nothing. This used to paint a green "Thank You" that told
-// volunteers they had signed up when the data was discarded. Until the form has
-// a real destination, say so and point people at the email address instead.
+// Volunteer signup uses the same static-site mail workflow as sponsorship and
+// car-show registration. The browser validates the existing required fields,
+// then opens a pre-addressed email containing the volunteer's details. Nothing
+// is stored by the website, and the volunteer completes signup by pressing Send.
 const volForm = document.querySelector('#volunteer .vol-form-wrap');
+const volFormHelp = document.getElementById('volFormHelp');
 const volFormNote = document.getElementById('volFormNote');
-if (volForm && volFormNote) {
-  volForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+if (volForm) {
+  if (volFormHelp) {
+    volFormHelp.innerHTML = `Complete the fields below and we will prepare an email to <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a>. Your email app will open so you can review and send it.`;
+  }
+  if (volFormNote) {
     volFormNote.hidden = false;
+    volFormNote.innerHTML = `Your volunteer request is complete only after you press Send in your email app. If nothing opens, email <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a> directly with your name, preferred role, and availability.`;
+  }
+
+  const submitButton = volForm.querySelector('.form-submit');
+  if (submitButton) submitButton.innerHTML = 'Prepare Volunteer Email &rarr;';
+
+  volForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const firstName = formValue(volForm, 'first_name');
+    const lastName = formValue(volForm, 'last_name');
+    const email = formValue(volForm, 'email');
+    const phone = formValue(volForm, 'phone') || 'Not provided';
+    const role = formValue(volForm, 'role') || 'General Support';
+    const availability = formValue(volForm, 'availability') || 'Not specified';
+    const fullName = [firstName, lastName].filter(Boolean).join(' ');
+
+    openPrefilledEmail(`America Strong Family Fest Volunteer - ${fullName}`, [
+      'America Strong Family Fest Volunteer Interest',
+      '',
+      `Name: ${fullName}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Preferred Role: ${role}`,
+      `Availability: ${availability}`,
+      '',
+      'Please add me to the America Strong Family Fest volunteer list.'
+    ]);
   });
 }
