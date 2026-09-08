@@ -417,6 +417,8 @@ nav.scrolled {
   color: var(--muted); font-size: 0.9rem; font-weight: 300;
   line-height: 1.8; align-self: end; padding-bottom: 0.3rem;
 }
+/* `bolder` against a 300 parent only resolves to 400, so state the weight. */
+.schedule-masthead p strong { font-weight: 600; color: var(--navy); }
 
 .schedule-list { list-style: none; }
 .sched-block {
@@ -440,6 +442,28 @@ nav.scrolled {
   color: var(--red); font-weight: 500;
 }
 
+.sched-groups { display: grid; gap: 1.6rem; }
+.sched-group-title {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 0.55rem;
+}
+.sched-group-count {
+  font-size: 0.58rem; letter-spacing: 0.06em; font-weight: 600;
+  min-width: 1.35em; padding: 0.15em 0.4em;
+  border-radius: 999px; text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.sched-group--new .sched-group-title { color: var(--red); }
+.sched-group--new .sched-group-count { background: rgba(192,40,45,0.12); color: var(--red-deep); }
+.sched-group--cont .sched-group-title { color: var(--muted); }
+.sched-group--cont .sched-group-count { background: rgba(107,94,74,0.14); color: var(--muted); }
+
+.sched-group--cont {
+  border-left: 2px solid rgba(10,31,92,0.12);
+  padding-left: 1.2rem;
+}
+
 .sched-items { list-style: none; }
 .sched-items li {
   display: flex; justify-content: space-between;
@@ -452,6 +476,18 @@ nav.scrolled {
 .si-when {
   font-size: 0.78rem; font-weight: 500; color: var(--muted);
   white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+/* Items starting this hour carry the weight; ongoing ones stay quiet. */
+.sched-group--new .si-name { font-weight: 500; color: var(--navy); }
+.sched-group--new .si-when { color: var(--red); }
+.sched-group--cont .si-name { color: var(--muted); font-weight: 300; }
+.sched-group--cont .sched-items li { padding: 0.4rem 0; border-bottom-color: rgba(10,31,92,0.09); }
+.sched-group--cont .si-name, .sched-group--cont .si-when { font-size: 0.84rem; }
+
+.sched-block--close .sched-close-note {
+  font-size: 0.92rem; font-weight: 300; color: var(--muted);
+  line-height: 1.7; max-width: 46ch;
 }
 
 .schedule-note {
@@ -467,6 +503,8 @@ nav.scrolled {
   .sched-block { grid-template-columns: 1fr; gap: 1.1rem; padding: 2rem 0; }
   .sched-items li { flex-direction: column; gap: 0.15rem; }
   .si-when { font-size: 0.75rem; }
+  .sched-group--cont { padding-left: 0.9rem; }
+  .sched-groups { gap: 1.3rem; }
 }
 
 /* ── CLASSIC CAR SHOW ── */
