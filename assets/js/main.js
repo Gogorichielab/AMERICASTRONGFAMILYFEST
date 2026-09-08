@@ -157,12 +157,170 @@ if (canvas) {
   syncStars();
 }
 
+const EVENT_EMAIL = 'info@americastrongfamilyfest.com';
+
+function openPrefilledEmail(subject, lines) {
+  const body = lines.join('\n');
+  window.location.href = `mailto:${EVENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function formValue(form, name) {
+  return String(new FormData(form).get(name) || '').trim();
+}
+
+// Keep the site's no-JavaScript fallback as a direct mailto link, but enhance
+// it into a structured sponsorship form when JavaScript is available. The site
+// never stores the values: submit opens the visitor's email client with a
+// pre-addressed, pre-filled message that they review and send themselves.
+const sponsorCtaRow = document.querySelector('.sponsor-cta-row');
+if (sponsorCtaRow) {
+  sponsorCtaRow.innerHTML = `
+    <form class="vol-form-wrap" id="sponsorMailForm">
+      <h3>Sponsorship Inquiry</h3>
+      <p class="form-sub" id="sponsorMailHelp">Complete the fields below and we will prepare an email to <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a>. Your email app will open so you can review and send it.</p>
+      <p class="form-req" aria-hidden="true">* Required</p>
+      <div class="fg">
+        <label for="sponsorBusiness">Business / Organization <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="sponsorBusiness" name="business" autocomplete="organization" required>
+      </div>
+      <div class="fg">
+        <label for="sponsorContact">Contact Name <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="sponsorContact" name="contact" autocomplete="name" required>
+      </div>
+      <div class="fg-row">
+        <div class="fg">
+          <label for="sponsorEmail">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="sponsorEmail" name="email" autocomplete="email" required>
+        </div>
+        <div class="fg">
+          <label for="sponsorPhone">Phone</label>
+          <input type="tel" id="sponsorPhone" name="phone" autocomplete="tel">
+        </div>
+      </div>
+      <div class="fg">
+        <label for="sponsorTier">Sponsorship Level <span class="req" aria-hidden="true">*</span></label>
+        <select id="sponsorTier" name="tier" required>
+          <option value="">Choose a level</option>
+          <option>Silver - $150</option>
+          <option>Gold - $500</option>
+          <option>Platinum - $1,000+</option>
+          <option>Other / Custom Package</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="sponsorNotes">Notes / In-kind Contribution</label>
+        <input type="text" id="sponsorNotes" name="notes" placeholder="Optional details">
+      </div>
+      <button type="submit" class="form-submit" aria-describedby="sponsorMailHelp">Prepare Sponsorship Email &rarr;</button>
+      <p class="form-note" id="sponsorMailStatus" role="status">Your inquiry is sent only after you press Send in your email app. If nothing opens, email <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a> directly.</p>
+    </form>`;
+
+  const sponsorMailForm = document.getElementById('sponsorMailForm');
+  sponsorMailForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const business = formValue(sponsorMailForm, 'business');
+    const contact = formValue(sponsorMailForm, 'contact');
+    const email = formValue(sponsorMailForm, 'email');
+    const phone = formValue(sponsorMailForm, 'phone') || 'Not provided';
+    const tier = formValue(sponsorMailForm, 'tier');
+    const notes = formValue(sponsorMailForm, 'notes') || 'None';
+
+    openPrefilledEmail(`America Strong Family Fest Sponsorship Inquiry - ${business}`, [
+      'America Strong Family Fest Sponsorship Inquiry',
+      '',
+      `Business / Organization: ${business}`,
+      `Contact Name: ${contact}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Sponsorship Level: ${tier}`,
+      `Notes / In-kind Contribution: ${notes}`,
+      '',
+      'Please contact me about sponsorship for America Strong Family Fest.'
+    ]);
+  });
+}
+
+// Car-show registration follows the same static-site pattern. The existing
+// direct mailto remains the no-JavaScript fallback; with JavaScript, drivers get
+// a structured form and a clear reminder that registration is not complete
+// until they send the generated email.
+const carShowRegisterLink = document.querySelector('#car-show a.btn-gold[href^="mailto:"]');
+if (carShowRegisterLink) {
+  const carShowMailForm = document.createElement('form');
+  carShowMailForm.className = 'vol-form-wrap';
+  carShowMailForm.id = 'carShowMailForm';
+  carShowMailForm.innerHTML = `
+    <h3>Register Your Car</h3>
+    <p class="form-sub" id="carShowMailHelp">Advance registration is required and spaces are first come, first served. Complete the form and we will prepare an email to <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a> for you to send.</p>
+    <p class="form-req" aria-hidden="true">* Required</p>
+    <div class="fg">
+      <label for="carParticipant">Participant Name <span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="carParticipant" name="participant" autocomplete="name" required>
+    </div>
+    <div class="fg-row">
+      <div class="fg">
+        <label for="carEmail">Email <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" id="carEmail" name="email" autocomplete="email" required>
+      </div>
+      <div class="fg">
+        <label for="carPhone">Phone <span class="req" aria-hidden="true">*</span></label>
+        <input type="tel" id="carPhone" name="phone" autocomplete="tel" required>
+      </div>
+    </div>
+    <div class="fg-row">
+      <div class="fg">
+        <label for="carYear">Vehicle Year <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="carYear" name="year" inputmode="numeric" placeholder="1969" required>
+      </div>
+      <div class="fg">
+        <label for="carMake">Make <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="carMake" name="make" placeholder="Chevrolet" required>
+      </div>
+    </div>
+    <div class="fg">
+      <label for="carModel">Model <span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="carModel" name="model" placeholder="Camaro" required>
+    </div>
+    <div class="fg">
+      <label for="carNotes">Notes</label>
+      <input type="text" id="carNotes" name="notes" placeholder="Optional vehicle details or special notes">
+    </div>
+    <button type="submit" class="form-submit" aria-describedby="carShowMailHelp">Prepare Registration Email &rarr;</button>
+    <p class="form-note" id="carShowMailStatus" role="status">Your registration is complete only after you press Send in your email app. You can attach an optional vehicle photo before sending. If nothing opens, email <a href="mailto:${EVENT_EMAIL}">${EVENT_EMAIL}</a> directly.</p>`;
+
+  carShowRegisterLink.replaceWith(carShowMailForm);
+
+  carShowMailForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const participant = formValue(carShowMailForm, 'participant');
+    const email = formValue(carShowMailForm, 'email');
+    const phone = formValue(carShowMailForm, 'phone');
+    const year = formValue(carShowMailForm, 'year');
+    const make = formValue(carShowMailForm, 'make');
+    const model = formValue(carShowMailForm, 'model');
+    const notes = formValue(carShowMailForm, 'notes') || 'None';
+
+    openPrefilledEmail(`America Strong Car Show Registration - ${year} ${make} ${model}`, [
+      'America Strong Family Fest Car Show Registration',
+      '',
+      `Participant Name: ${participant}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Vehicle: ${year} ${make} ${model}`,
+      `Notes: ${notes}`,
+      '',
+      'I understand registration is first come, first served and my space is subject to organizer confirmation.',
+      'Optional: I may attach a vehicle photo to this email before sending.'
+    ]);
+  });
+}
+
 // Volunteer form submit.
 // There is no backend yet, and action="#" on a static site means a real submit
 // would post into nothing. This used to paint a green "Thank You" that told
 // volunteers they had signed up when the data was discarded. Until the form has
 // a real destination, say so and point people at the email address instead.
-const volForm = document.querySelector('.vol-form-wrap');
+const volForm = document.querySelector('#volunteer .vol-form-wrap');
 const volFormNote = document.getElementById('volFormNote');
 if (volForm && volFormNote) {
   volForm.addEventListener('submit', function (e) {
