@@ -115,6 +115,8 @@ Consequences worth remembering:
 - Action SHAs are pinned. Keep them pinned when bumping versions.
 - GitHub Pages source must be set to **GitHub Actions** in repo Settings → Pages.
 
+**CodeQL also runs on every PR** — `Analyze (javascript-typescript)` and `Analyze (actions)`. It is configured through GitHub's code-scanning **default setup**, so there is no workflow file for it in this repo and nothing here to edit. A PR therefore shows four checks, not one: `build`, `deploy` (skipped on PRs by design), and the two CodeQL analyses.
+
 ---
 
 ## Design system
@@ -268,7 +270,7 @@ Merges to `main` are **squash merges**, which means **the PR title becomes the c
 
 - Branch from `main`; PRs target `main`
 - **All PRs are opened as drafts**
-- The build check runs on every PR via GitHub Actions
+- The `build` check and CodeQL analysis run on every PR; `deploy` is skipped on PRs by design
 - After any push, open a draft PR if one does not already exist for the branch
 - Never push directly to `main`
 - `@gogorichie` owns every path via CODEOWNERS and reviews everything
