@@ -632,6 +632,34 @@ nav.scrolled {
   content: '→'; color: var(--red-dark); flex-shrink: 0;
   font-size: 0.78rem; margin-top: 1px;
 }
+.sponsor-wall {
+  border-top: 1px solid rgba(248,242,230,0.18);
+  padding-top: 3rem; margin-bottom: 3rem;
+}
+.sponsor-wall-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--cream); margin-bottom: 0.6rem;
+}
+.sponsor-wall-note {
+  color: var(--on-dark-muted); font-size: 0.85rem;
+  font-weight: 300; line-height: 1.8;
+  max-width: 46ch; margin-bottom: 2.5rem;
+}
+.sponsor-wall-groups { display: grid; gap: 2.2rem; }
+.sponsor-group-name {
+  font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+  font-weight: 500; margin-bottom: 0.8rem;
+}
+.sponsor-group-platinum .sponsor-group-name { color: var(--cream); }
+.sponsor-group-gold .sponsor-group-name { color: var(--gold-light); }
+.sponsor-group-silver .sponsor-group-name { color: var(--silver); }
+.sponsor-group-empty, .sponsor-names {
+  color: var(--on-dark-muted); font-size: 0.85rem; font-weight: 300;
+  border-left: 2px solid rgba(248,242,230,0.22); padding-left: 1rem;
+}
+.sponsor-names { list-style: none; line-height: 1.9; }
+
 .sponsor-cta-row { text-align: left; }
 .sponsor-note {
   display: block; color: var(--on-dark-muted);
