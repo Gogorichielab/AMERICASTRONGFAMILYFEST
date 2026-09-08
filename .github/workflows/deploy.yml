@@ -1,49 +1,74 @@
 name: Build & Deploy
 
+# Adapted from Gogorichielab/.github workflow-templates/pages.yml at
+# commit 6599d2688f322bb63a01452e032777d7c0bf6eb9. This repository keeps its
+# zero-dependency staging command, custom domain, and Build & Deploy job names.
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
+
+env:
+  SITE_DIRECTORY: _site
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
 
       - name: Stage site
         run: |
-          mkdir -p _site
-          cp -r index.html assets CNAME robots.txt sitemap.xml _site/
+          mkdir -p "$SITE_DIRECTORY"
+          cp -r index.html 404.html terms.html assets CNAME robots.txt sitemap.xml "$SITE_DIRECTORY/"
+
+      - name: Verify staged site and performance budgets
+        run: |
+          test -f "$SITE_DIRECTORY/index.html"
+          test -f "$SITE_DIRECTORY/CNAME"
+          test -f "$SITE_DIRECTORY/assets/img/car-show-2025.webp"
+          test "$(stat -c%s "$SITE_DIRECTORY/assets/img/car-show-2025.jpg")" -lt 200000
+          test "$(stat -c%s "$SITE_DIRECTORY/assets/img/car-show-2025.webp")" -lt 180000
 
       - name: Upload artifact
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
-          path: _site
+          path: ${{ env.SITE_DIRECTORY }}
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages-production
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

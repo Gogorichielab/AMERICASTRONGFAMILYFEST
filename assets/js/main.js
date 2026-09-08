@@ -36,6 +36,39 @@ const nav = document.getElementById('nav');
 if (nav) {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+}
+
+// Mobile navigation. The control stays keyboard operable, reports its state to
+// assistive technology, closes after a selection, and returns focus on Escape.
+const navToggle = document.getElementById('navToggle');
+const primaryNav = document.getElementById('primaryNav');
+if (navToggle && primaryNav) {
+  const setNavOpen = (open, returnFocus = false) => {
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    primaryNav.classList.toggle('is-open', open);
+    if (returnFocus) navToggle.focus();
+  };
+
+  navToggle.addEventListener('click', () => {
+    const open = navToggle.getAttribute('aria-expanded') !== 'true';
+    setNavOpen(open);
+    if (open) primaryNav.querySelector('a')?.focus();
+  });
+
+  primaryNav.addEventListener('click', event => {
+    if (event.target.closest('a')) setNavOpen(false);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+      setNavOpen(false, true);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) setNavOpen(false);
   });
 }
 
