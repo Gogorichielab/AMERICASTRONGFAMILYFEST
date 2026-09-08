@@ -26,46 +26,58 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "America Strong Family Fest",
-    "description": "A free community celebration honoring America's strength and resilience.",
-    "startDate": "2026-09-12T10:00:00-05:00",
-    "endDate": "2026-09-12T15:00:00-05:00",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "isAccessibleForFree": true,
-    "url": "https://americastrongfamilyfest.com",
-    "location": {
-      "@type": "Place",
-      "name": "St. Peter Lutheran Church",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "985 Galligan Road",
-        "addressLocality": "Gilberts",
-        "addressRegion": "IL",
-        "postalCode": "60136",
-        "addressCountry": "US"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://americastrongfamilyfest.com/#organizer",
+        "name": "St. Peter Lutheran Church",
+        "url": "https://stpeterlutheran.org/",
+        "sameAs": [
+          "https://www.facebook.com/StPeterLutheranGilberts",
+          "https://www.instagram.com/stpetergilberts/"
+        ]
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 42.1302386,
-        "longitude": -88.3733207
+      {
+        "@type": "Event",
+        "@id": "https://americastrongfamilyfest.com/#event",
+        "name": "America Strong Family Fest",
+        "description": "A free community celebration honoring America's strength and resilience.",
+        "startDate": "2026-09-12T10:00:00-05:00",
+        "endDate": "2026-09-12T15:00:00-05:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "isAccessibleForFree": true,
+        "url": "https://americastrongfamilyfest.com",
+        "location": {
+          "@type": "Place",
+          "name": "St. Peter Lutheran Church",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "985 Galligan Road",
+            "addressLocality": "Gilberts",
+            "addressRegion": "IL",
+            "postalCode": "60136",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 42.1302386,
+            "longitude": -88.3733207
+          }
+        },
+        "organizer": {
+          "@id": "https://americastrongfamilyfest.com/#organizer"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://americastrongfamilyfest.com",
+          "validFrom": "2026-01-01"
+        }
       }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "America Strong Family Fest",
-      "url": "https://americastrongfamilyfest.com",
-      "email": "info@americastrongfamilyfest.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://americastrongfamilyfest.com",
-      "validFrom": "2026-01-01"
-    }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -590,6 +602,8 @@
         <li><a href="mailto:info@americastrongfamilyfest.com">info@americastrongfamilyfest.com</a></li>
         <li><a href="mailto:info@americastrongfamilyfest.com">Sponsorship Inquiries</a></li>
         <li><a href="https://stpeterlutheran.org/" target="_blank" rel="noopener">stpeterlutheran.org</a></li>
+        <li><a href="https://www.facebook.com/StPeterLutheranGilberts" target="_blank" rel="noopener">St. Peter on Facebook</a></li>
+        <li><a href="https://www.instagram.com/stpetergilberts/" target="_blank" rel="noopener">St. Peter on Instagram</a></li>
         <li>985 Galligan Road, Gilberts, IL 60136</li>
       </ul>
     </div>
