@@ -904,6 +904,8 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
 
 /* ── LEGAL PAGE ── */
 .legal-page { background: var(--offwhite); }
+/* No main.js here, so no custom cursor is drawn. Give the system one back. */
+.legal-page, .legal-page * { cursor: auto !important; }
 .legal-header {
   min-height: 5rem; padding: 1.4rem clamp(1.5rem, 6vw, 5rem);
   display: flex; justify-content: space-between; align-items: center;
@@ -940,6 +942,11 @@ footer { background: var(--navy); padding: 5rem 3rem 2.5rem; }
 .legal-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
 .legal-content p + p { margin-top: 1rem; }
 .legal-content a { color: var(--red-dark); font-weight: 500; overflow-wrap: anywhere; text-underline-offset: 3px; }
+.legal-content ul { margin-top: 1rem; padding-left: 1.15rem; list-style: none; }
+.legal-content li { position: relative; color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
+.legal-content li + li { margin-top: 0.75rem; }
+.legal-content li::before { content: ''; position: absolute; left: -1.15rem; top: 0.72em; width: 6px; height: 2px; background: var(--red); }
+.legal-content li strong { color: var(--navy); font-weight: 600; }
 .legal-footer {
   padding: 2rem clamp(1.5rem, 6vw, 5rem); background: var(--navy);
   display: flex; justify-content: space-between; gap: 1rem;

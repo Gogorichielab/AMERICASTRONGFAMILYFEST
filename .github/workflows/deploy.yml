@@ -34,12 +34,14 @@ jobs:
       - name: Stage site
         run: |
           mkdir -p "$SITE_DIRECTORY"
-          cp -r index.html 404.html terms.html assets CNAME robots.txt sitemap.xml "$SITE_DIRECTORY/"
+          cp -r index.html 404.html privacy.html terms.html assets CNAME robots.txt sitemap.xml "$SITE_DIRECTORY/"
 
       - name: Verify staged site and performance budgets
         run: |
           test -f "$SITE_DIRECTORY/index.html"
           test -f "$SITE_DIRECTORY/CNAME"
+          test -f "$SITE_DIRECTORY/privacy.html"
+          test -f "$SITE_DIRECTORY/terms.html"
           test -f "$SITE_DIRECTORY/assets/img/car-show-2025.webp"
           test "$(stat -c%s "$SITE_DIRECTORY/assets/img/car-show-2025.jpg")" -lt 200000
           test "$(stat -c%s "$SITE_DIRECTORY/assets/img/car-show-2025.webp")" -lt 180000
